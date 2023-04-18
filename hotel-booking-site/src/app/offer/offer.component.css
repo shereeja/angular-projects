@@ -1,0 +1,58 @@
+
+.p-1{
+    margin-top:10px;
+    margin-bottom:10px;
+    font-weight: bold;
+    margin-left:64px;
+
+}
+.offer{
+    position: relative;
+
+}
+.img1{
+    width:567px;
+   left:2px;
+    position: absolute;
+    height: 200px;
+}
+.img2{
+    width: 560px;
+    
+    position:absolute;
+    height: 200px;
+}
+.p-2{
+    position: absolute;
+    font-family: cursive;
+    top: 27px;
+ 
+    color: aliceblue;
+
+}
+.p-3{
+    position: absolute;
+    font-family: cursive;
+    top: 27px;
+    margin-left:15px;
+    color: aliceblue;
+
+}
+.btn1{
+    position: absolute;
+    font-family: cursive;
+    top: 110px;
+    margin-left: 47px;
+    color: aliceblue;
+    background-color: blue;
+
+}
+.btn2{
+    position: absolute;
+    font-family: cursive;
+    top: 110px;
+    margin-left: 65px;
+    color: aliceblue;
+    background-color: blue;
+
+}

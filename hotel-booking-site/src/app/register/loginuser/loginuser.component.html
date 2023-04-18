@@ -1,0 +1,99 @@
+<!-- <div class="container">
+   
+    
+    
+    
+    
+    
+    <div class="card bg-light">
+    <article class="card-body mx-auto" style="max-width: 400px;">
+        <h4 class="card-title mt-3 text-center">Create Account</h4>
+        <p class="text-center">Get started with your free account</p>
+        <p>
+            <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+            <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+        </p>
+        <p class="divider-text">
+            <span class="bg-light">OR</span>
+        </p>
+        <form #userForm="ngForm" >
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+             </div>
+            <input #name="ngModel" required minlenght="2" maxlength="10"name="username" class="form-control" placeholder="Full name" type="text" ngModel>
+     <div *ngIf="name.touched && name.invalid" class="alert alert-danger">
+            <p *ngIf="name.errors?.['required']">name is required</p>
+   
+        </div>
+        </div> <!-- form-group// -->
+        <!-- <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+             </div>
+            <input name="" required class="form-control" placeholder="Email address" type="email"ngModel>
+        </div>  form-group//
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+            </div>
+            <select class="custom-select" style="max-width: 120px;" ngModel>
+                <option selected="">+971</option>
+                <option value="1">+972</option>
+                <option value="2">+198</option>
+                <option value="3">+701</option>
+            </select>
+            <input name="" class="form-control" placeholder="Phone number" type="text" ngModel>
+        </div>  form-group// 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+            </div>
+            <select class="form-control" ngModel>
+                <option selected=""> Select job type</option>
+                <option>Designer</option>
+                <option>Manager</option>
+                <option>Accaunting</option>
+            </select>
+        </div>  form-group end.// 
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" placeholder="Create password" type="password">
+        </div> form-group//
+        <div class="form-group input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+            </div>
+            <input class="form-control" placeholder="Repeat password" type="password">
+        </div>  form-group//                                      
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block" > Create Account  </button>
+        </div>form-group//       
+        <p class="text-center">Have an account? <a href="">Log In</a> </p>                                                                 
+    </form>
+    </article>
+    </div>   -->
+    <div class="container">
+  <h1>sign In</h1>
+
+<form #userForm="ngForm" (ngSubmit)="userForm.valid && onSubmit(userForm.value)">
+
+  
+
+  <div class="form-group">
+      <label>Email</label>
+      <input type="email" value="mail-id" name="email" class="form-control"[(ngModel)]="usermodel.email" required #email="ngModel" >
+     <P class="text text-danger" *ngIf="userForm.submitted&& email.errors|| email.touched && email.errors?.['required']">write valid Email<P>
+    </div>
+
+      <div class="form-group ">
+      
+        <input class="form-control" name="pswd" placeholder="Create password" type="password"[(ngModel)]="usermodel.pswd" required #pswd="ngModel">
+        <P class="text text-danger" *ngIf="userForm.submitted&& pswd.errors|| pswd.touched && pswd.errors?.['required']">plaese write valid password</P>
+
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+    </div>

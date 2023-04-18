@@ -1,0 +1,23 @@
+<div class="container" style="position: relative;top:250px;background-color: rgb(238, 245, 245);">
+    <div class="row">
+        <div class=" col-md-2"></div>
+        <div class="col-md-8">
+<h3 class="text-center p-3"> Quick and easy trip planner</h3>
+<p class="text-center">Pick a vibe and explore the top destinations all over the world. Find popular hotels on your choice locations. Hotels are available in party vibe,mountain vibe,beach vibe. Made advanace booking we provide best and top services with cheap price... </p>
+<div class="col-md-2"></div>
+            </div>
+    </div>
+    <div class="row" style="margin-left:50px;">
+        
+    <div *ngFor="let item of data" class="card col-md-12 col-lg-12 mt-2" style="width:250px;">
+      <img class="card-img-top" style="height: 100px;" src="{{item.image}}" >
+      <div class="card-body" style="padding-right:60px;">
+       
+        <p class="card-text"><b> {{item.name}} </b></p>
+       
+       
+      </div>
+    </div>
+    
+    </div>
+    </div>

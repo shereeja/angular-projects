@@ -1,0 +1,149 @@
+<div class="modal fade" tabindex="-1" id="booking-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">GoTrip.com</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+          <form action="#" method="GET" name="myform" onSubmit=" validate()">
+            <div class="row">
+              <div class="col mb-2">
+                <input type="text"  placeholder="Name" name="fname" required>
+              </div>
+              <div class="col mb-2">
+                <input type="email"  placeholder="gotrip@gmail.com" name="email" required>
+              </div>
+            </div>
+              <div class="row">
+                  <div class="col-sm-6">
+             <div class="form-floating">
+              <input type="date" class="form-control" placeholder="CHECKIN" required>
+              <label>CHECKIN</label>
+             </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-floating">
+             <input type="date" class="form-control" placeholder="CHECKOUT" required>
+             <label>CHECKOUT</label>
+            </div>
+         </div>
+         </div>
+      <div class="col mt-2">
+             <div class="form-floating">
+              <select id="select1" class="form-select">
+                   <option></option>        
+                  <option>3 Adults . 1 Child . 2 Rooms</option>
+                  <option>2 Adults . 2 Child . 1 Room</option>
+                  <option>2 Adults . 0 Child . 1 Room</option>
+                  <option>4 Adults . 2 Child . 2 Room</option>
+                  
+              </select>
+              <label for="select1">GUEST & ROOMS</label>
+             </div>
+          </div>
+          <br>
+          <div class="modal-footer">
+            <div class="row">
+            <button type="submit" value="submit" class="btn btn-primary submit col ">Submit</button>
+            <button type="button" class="btn btn-secondary submit col" data-bs-dismiss="modal" (click)="goBack()">Close</button>
+          </div>
+          </div>
+          </form>
+    
+      </div> 
+    </div>
+    </div>
+  </div>
+      <script >
+        function validate(){
+          var val = document.forms([myform][fname]);
+          if(val == ""){
+            alert("Name should be filled");
+            return false;
+      
+          }
+          var val = document.forms([myform][email]);
+          if(val == ""){
+            alert("Email must be filled");
+            return false;
+      
+          }
+          if(function() {validate()=true}){
+            alert("BOOKED SUCCESSFULLY");
+        }
+        }
+      
+      </script>
+      
+     
+   
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+  <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="..." class="rounded me-2" alt="...">
+      <strong class="me-auto">GoTrip</strong>
+      <small>just now</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Booked Successfully
+    </div>
+  </div>
+</div>
+<div class="packages-section" *ngIf="showPackage==0">
+  <div class ="selection-button-section">
+        <div class="btn-container container">
+          <div class="row">
+            <div class="col-md-3">
+        <button type="button" class="btn btn-light btn-filter mt-2" (click)="displayallPackage()">
+            ALL
+        </button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-light btn-filter mt-2" (click)="filterPackage('party')" >
+            EVENT/PARTY
+        </button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="btn btn-light btn-filter mt-2" (click)="filterPackage('beach')">
+            BEACHES
+        </button>
+        </div>
+        <div class="col-md-3">
+        <button type="button" class="btn btn-light btn-filter mt-2" (click)="filterPackage('hill')">
+            HILL STATIONS
+        </button>
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="selection-card-section mt-3">
+        <div class="card-container row" style="margin-bottom: -120px;"  >
+          <div class="col-lg-4 col-lg-4 col-lg-4"  *ngFor="let n of item1">
+            <div class="col mx-3 my-1"  *ngIf="placefil == n.placefor || placefil=='' "  >
+            <div class="card" style="width: 20rem;" >
+                <img class="card-img-top" src="{{n.img1}}" alt="Card image cap" width="180px" height="250px">
+                <div class="card-body">
+                  <h5 class="card-title">{{n.company1}}</h5>
+                  <h6 class="card-title">{{n.place}}</h6>
+                  <p class="card-text">{{n.amount1}}/-</p>
+                  <button class="btn btn-danger package" (click)="displayPackageSection(n)">More Details</button>
+                  <button class="btn btn-info float-right book"  data-bs-toggle="modal" data-bs-target="#booking-modal">Book Now</button>
+            </div>
+            
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class="child-section1" *ngIf="showPackage==1">
+<app-packagedetail [childItem]="itemn" (goToPackage)="goBackClicked($event)"></app-packagedetail>
+</div>
+<!-- <div class="child-section2" *ngIf="showPackage==2">
+<app-bookingdetail [itemb]="itemn" (goToPackage1)="goBackClicked($event)"></app-bookingdetail>
+</div> -->
+
+

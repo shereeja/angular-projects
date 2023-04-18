@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+.packages-section
+{
+    
+    padding: 10px;
+    
+
+}
+.selection-button-section
+{
+    height: 80px;
+   
+   
+    
+   
+}
+.btn-filter
+{
+    background-image: url('src/assets/back.jfif');
+    width: 200px;
+}
+
+@media only screen and (max-width: 600px) {
+    .selection-button-section{
+      height : 200px;
+    }
+    .btn-container{
+        margin-left: 150px;
+    }
+  }
+label,::placeholder{
+    color: rgb(255, 71, 71);
+    font-weight:500;
+}
+.modal-content{
+    width: 450px;
+    height: 494px;
+    background-color: rgba(17, 121, 206, 0.76);
+    border: 2px solid rgb(10 5 56 / 44%);
+    border-radius: 20px;
+    position: absolute;
+}
+
+select,input{
+    border-radius: 10px;
+    background-color: rgb(56, 189, 194);
+}
+
+.submit{
+    background-color: rgb(4, 145, 226);
+    width: 200px;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.modal-title{
+    font-family: 'Satisfy', cursive;
+    color: #fff;
+    font-size: 40px;
+}
+.card{
+    
+    outline: none;
+    border-radius: 10px;
+    background-color: rgb(224, 228, 222);
+    border: 2px solid rebeccapurple;
+    padding-top: 10px;
+}
+.package{
+    border-radius: 20px;
+    background-color: rgb(211, 19, 60);
+    color: #000;
+    
+}
+.book{
+    border-radius: 20px;
+    color: #000;
+}
+
+

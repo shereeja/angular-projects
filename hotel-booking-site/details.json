@@ -1,0 +1,20 @@
+{
+  "person1": [
+    {
+      "name": "shereeja",
+      "email": "shereejama90488@gmail.com",
+      "phone": "9947636736",
+      "job": "web designer",
+      "password":"22222"
+    },
+ 
+    {
+      "name": "mehroof",
+      "email": "mehroofkm@gmail.com",
+      "phone": "9947636739",
+      "job": " designer",
+      "password":"2777222"
+    }
+  ]
+  
+}
